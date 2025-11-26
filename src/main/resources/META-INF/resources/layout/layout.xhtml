@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="pt-br"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>SVE</title>
+    <h:outputStylesheet name="libs/css/layout.css" />
+</h:head>
+<h:body>
+    <div class="layoutdiv">
+        <h:form id="topbar">
+            <p:menubar styleClass="menu_topbar">
+                <p:menuitem value="Dashboard" outcome="/index.xhtml" icon="pi pi-home" />
+                <p:menuitem value="Eleitores" outcome="" icon="pi pi-user-edit"/>
+                <p:menuitem value="Candidatos" outcome="" icon="pi pi-users"/>
+                <p:menuitem value="Resultados" outcome="" icon="pi pi-plus-circle"/>
+                <p:menuitem value="Votações" outcome="" icon="pi pi-chart-bar"/>
+                <p:menuitem value="Configurações" outcome="" icon="pi pi-cog"/>
+                <p:menuitem value="Perfil" outcome="" icon="pi pi-user"/>
+            </p:menubar>
+        </h:form>
+        <p:growl id="messages"/>
+        <div class="content">
+            <ui:insert name="content">
+                <h:outputText value="Conteúdo padrão: nenhuma página filha foi carregada." />
+            </ui:insert>
+        </div>
+    </div>
+</h:body>
+</html>
