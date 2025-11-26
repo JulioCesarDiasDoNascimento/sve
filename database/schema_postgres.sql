@@ -19,7 +19,7 @@ CREATE TABLE enderecos (
 CREATE TABLE pessoas (
     id SERIAL PRIMARY KEY,
     nome varchar(255) NOT NULL,
-    cpf VARCHAR(20) NOT NULL,
+    cpf VARCHAR(20) NOT NULL UNIQUE,
     rg VARCHAR(50),
     cnh VARCHAR(50),
     data_nascimento DATE,
@@ -29,12 +29,6 @@ CREATE TABLE pessoas (
     senha varchar(255),
     idade INTEGER,
     sexo sexo
-);
-
-CREATE TABLE usuarios (
-    id INTEGER PRIMARY KEY REFERENCES pessoas(id) ON DELETE CASCADE,
-    username VARCHAR(255),
-    password varchar(255)
 );
 
 CREATE TABLE eleitores (
@@ -66,7 +60,5 @@ CREATE TABLE pontos_de_voto (
 );
 
 -- Índices básicos
-CREATE INDEX idx_pessoas_cpf ON pessoas(cpf);
 CREATE INDEX idx_pessoas_email ON pessoas(email);
 CREATE INDEX idx_candidatos_partido ON candidatos(partido);
-
