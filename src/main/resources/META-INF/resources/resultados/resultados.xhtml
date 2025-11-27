@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="/layout/layout.xhtml">
+
+    <ui:define name="content">
+        <h1>Resultados da Votação</h1>
+        <p:button value="Finalizar Apuração" styleClass="ui-button-raised ui-button-secondary ui-button-flat"/>
+        <h2>Eleição para Presidente</h2>
+        <h:form id="formResultados">
+            <div class="card">
+                <p:card id="cardId">
+                    <h3>Distribuição de Votos</h3>
+                    <h:outputText value="Apuração:"/>
+                    <h:outputText id="contagemNumero" value=""/>
+                    <h:outputText value="Candidato: "/>
+                    <p:progressBar id="progressCandidato" value="" severity="danger" displayOnly="true"/>
+                </p:card>
+            </div>
+        </h:form>
+    </ui:define>
+</ui:composition>
