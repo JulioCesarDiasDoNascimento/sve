@@ -38,7 +38,7 @@ public class UserCadastroController implements Serializable {
             pessoaService.salvar(pessoa);
             // Limpar formulário
             init();
-            return "index.xhtml?faces-redirect=true";
+            return "/index.xhtml?faces-redirect=true";
         } catch (Exception e) {
             FacesContext.getCurrentInstance().addMessage(null,
                     new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro ao cadastrar: ", e.getMessage()));

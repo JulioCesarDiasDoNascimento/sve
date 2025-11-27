@@ -11,12 +11,12 @@
                 <h1>Login</h1>
                 <p:panelGrid columns="2" columnClasses="label,value" style="margin-bottom:10px;">
                      <h:outputLabel for="username" value="CPF:" />
-                     <p:inputMask id="username" value="#{userContoller.pessoa.cpf}" mask="999.999.999-99" required="true" placeholder="Digite seu CPF"/>
+                     <p:inputMask id="username" value="#{userController.pessoa.cpf}" mask="999.999.999-99" required="true" placeholder="Digite seu CPF"/>
 
                      <h:outputLabel for="password" value="Senha:" />
-                     <p:password id="password" value="#{userContoller.pessoa.senha}" required="true" />
+                     <p:password id="password" value="#{userController.pessoa.senha}" required="true" />
                 </p:panelGrid>
-                <p:commandButton value="Entrar" action="#{userContoller.login()}" update=":messages" ajax="true"/>
+                <p:commandButton value="Entrar" action="#{userController.login()}" update=":messages" ajax="true"/>
            </p:card>
        </h:form>
     </ui:define>
