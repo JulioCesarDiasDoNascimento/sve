@@ -9,7 +9,7 @@
     <ui:define name="content">
         <h1>Gerenciar candidato</h1>
     <h:form id="tabelacandidato">
-        <p:commandButton value="Adicionar Candidato" id="adicionar-candidato"/>
+        <p:commandButton value="Adicionar Candidato" id="adicionar-candidato" action="#{cadidadoController.criarNovo()}"/>
 
         <p:dataTable var="candidato" value="#{candidatoController.lista}">
 
