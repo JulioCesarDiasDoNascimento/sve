@@ -7,9 +7,11 @@
                 template="/layout/layout.xhtml">
 
     <ui:define name="content">
+        <h:outputStylesheet name="libs/css/novo_usuario.css"/>
+
         <h1>Cadastro de Usuário</h1>
-        <h:form id="formCadastro">
-            <h:outputLabel for="nome" value="Nome:"/>
+        <h:form id="formCadastro" styleClass="form-cadastro">
+        <h:outputLabel for="nome" value="Nome:"/>
             <p:inputText id="nome" value="#{userCadastroController.pessoa.nome}" required="true"/>
             <br/>
 
