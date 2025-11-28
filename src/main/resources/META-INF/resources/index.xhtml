@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-                xmlns:p="http://primefaces.org/ui"
+                xmlns:p="http://primefaces.org/ui" xmlns:h="http://java.sun.com/jsf/html"
                 template="/layout/layout.xhtml">
+
+    <h:outputStylesheet library="libs" name="css/index.css"/>
+
 
     <ui:define name="content">
         <!--Paginia inicial mas serve como base para criação de todas -->
         <h1>Bem vindo a Sistema de Votação Eletrônica (SVE)</h1>
+        <p:card>
+            <h3>Utilize o menu ao lado para navegar entre as funcionalidades do sistema.</h3>
+            <p:graphicImage id="foto" library="libs" name="img/sistema.png" styleClass="foto"/>
+        </p:card>
     </ui:define>
 </ui:composition>
