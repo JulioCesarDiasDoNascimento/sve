@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Getter
 @Setter
 @Entity
-@Table(name = "pessoa")
+@Table(name = "pessoas")
 public class Pessoa {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,6 +20,14 @@ public class Pessoa {
     private String cpf;
     private String rg;
     private String cnh;
+
+    @ManyToOne
+    @JoinColumn(name = "candidato_id")
+    private Candidato candidato;
+
+    @ManyToOne
+    @JoinColumn(name = "eleitor_id")
+    private Eleitor eleitor;
 
     private LocalDate dataNascimento;
 
