@@ -19,12 +19,12 @@ public class Candidato extends Pessoa{
     private String estado;
     private String candidatura;
 
-    private int votos = 0;
+    private Integer votos = 0;
 
     private Date dataVoto;
 
     @Column(unique = true)
-    private int numero;
+    private Integer numero;
 
     // propostas do candidato (texto livre)
     private String propostas;

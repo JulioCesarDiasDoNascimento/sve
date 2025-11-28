@@ -1,5 +1,6 @@
 package com.unp.sve.service;
 
+import com.unp.sve.domain.Candidato;
 import com.unp.sve.domain.Pessoa;
 import com.unp.sve.repository.PessoaRepository;
 import jakarta.transaction.Transactional;
@@ -51,16 +52,14 @@ public class PessoaService {
                 .filter(p -> senha.equals(p.getSenha()));
     }
 
-    // New helper to list all Pessoas (used by controllers)
     public List<Pessoa> listarTodas() {
         return pessoaRepository.findAll();
     }
 
-    // Convenience method to list only Candidatos
     public List<com.unp.sve.domain.Candidato> listarCandidatos() {
         return pessoaRepository.findAll().stream()
-                .filter(p -> p instanceof com.unp.sve.domain.Candidato)
-                .map(p -> (com.unp.sve.domain.Candidato) p)
+                .filter(p -> p instanceof Candidato)
+                .map(p -> (Candidato) p)
                 .collect(Collectors.toList());
     }
 
