@@ -11,9 +11,13 @@
         <h:form id="tabelaeleitor">
             <p:commandButton value="Adicionar eleitor" id="adicionar-eleitor"/>
             <br/>
+            <br/>
+
             <h:outputLabel for="buscar" value="Buscar por eleitor ou CPF:" />
             <p:inputText id="buscar"/>
 
+            <br/>
+            <br/>
             <p:dataTable var="eleitor" value="#{eleitorController.lista}">
 
                 <p:column headerText="Nome">
@@ -29,8 +33,6 @@
                 </p:column>
 
             </p:dataTable>
-
-            <p:commandButton value="Editar" id="editar-candidato"/>
 
         </h:form>
     </ui:define>

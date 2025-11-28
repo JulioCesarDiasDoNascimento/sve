@@ -13,26 +13,33 @@
         <br/>
 
         <h:form enctype="multipart/form-data" type="post">
+            <p:panelGrid columns="4" columnClasses="label, value, label, value" style="width:100%">
 
             <p:outputLabel for="nome" value="Nome do candidato"/>
             <p:inputText id="nome"  required="true"/>
+            <br/>
             <br/>
 
             <p:outputLabel for="numero" value="Numero do candidato"/>
             <p:inputText id="numero"  required="true"/>
             <br/>
+            <br/>
 
             <p:outputLabel for="partido" value="Partido"/>
             <p:inputText id="partido"  required="true"/>
+            <br/>
             <br/>
 
             <p:outputLabel for="propostas" value="Propostas"/>
             <p:inputText id="propostas" required="true"/>
             <br/>
+            <br/>
 
             <p:outputLabel for="foto" value="Foto candidato"/>
             <p:fileUpload id="foto"/>
             <br/>
+            <br/>
+            </p:panelGrid>
 
         </h:form>
     </ui:define>
