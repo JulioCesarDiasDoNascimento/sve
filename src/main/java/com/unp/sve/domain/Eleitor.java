@@ -13,8 +13,5 @@ import lombok.Setter;
 public class Eleitor extends Pessoa{
 
     // Classe para os eleitores
-    private String tituloEleitor;
-    private String zonaEleitoral;
-    private String secaoEleitoral;
     private boolean votou;
 }

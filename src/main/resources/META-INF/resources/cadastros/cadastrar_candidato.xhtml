@@ -12,34 +12,41 @@
         <h3>Adicione, edite ou remova candidatos para a eleição</h3>
         <br/>
 
-        <h:form enctype="multipart/form-data" type="post">
+        <h:form id="formCadastrar" enctype="multipart/form-data" type="post">
             <p:panelGrid columns="4" columnClasses="label, value, label, value" style="width:100%">
 
-            <p:outputLabel for="nome" value="Nome do candidato"/>
-            <p:inputText id="nome"  required="true"/>
+            <p:outputLabel for="cpf" value="CPF do candidato"/>
+            <p:inputText id="cpf" value="#{cadidadoController.candidado.cpf}" required="true">
+                <p:ajax event="blur" listener="#{cadidadoController.buscarPorCpf}" update="nomeOutput"/>
+            </p:inputText>
+
+            <p:outputLabel for="nomeOutput" value="Nome do candidato"/>
+            <h:outputText id="nomeOutput" value="#{cadidadoController.candidado.nome}"/>
             <br/>
             <br/>
 
             <p:outputLabel for="numero" value="Numero do candidato"/>
-            <p:inputText id="numero"  required="true"/>
+            <p:inputText id="numero" value="#{cadidadoController.candidado.numero}" required="true"/>
             <br/>
             <br/>
 
             <p:outputLabel for="partido" value="Partido"/>
-            <p:inputText id="partido"  required="true"/>
+            <p:inputText id="partido" value="#{cadidadoController.candidado.partido}" required="true"/>
             <br/>
             <br/>
 
             <p:outputLabel for="propostas" value="Propostas"/>
-            <p:inputText id="propostas" required="true"/>
+            <p:inputText id="propostas" value="#{cadidadoController.candidado.propostas}" required="true"/>
             <br/>
             <br/>
 
             <p:outputLabel for="foto" value="Foto candidato"/>
-            <p:fileUpload id="foto"/>
+            <p:fileUpload id="foto" />
             <br/>
             <br/>
             </p:panelGrid>
+
+            <p:commandButton value="Salvar" action="#{cadidadoController.registrarCandidato}" ajax="false"/>
 
         </h:form>
     </ui:define>

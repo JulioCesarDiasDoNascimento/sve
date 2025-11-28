@@ -9,7 +9,7 @@
     <ui:define name="content">
         <h1>Gerenciar de eleitores</h1>
         <h:form id="tabelaeleitor">
-            <p:commandButton value="Adicionar eleitor" id="adicionar-eleitor"/>
+            <p:commandButton value="Adicionar eleitor" id="adicionar-eleitor" action="#{eleitorController.criarNovo()}"/>
             <br/>
             <br/>
 
@@ -18,7 +18,7 @@
 
             <br/>
             <br/>
-            <p:dataTable var="eleitor" value="#{eleitorController.lista}">
+            <p:dataTable var="eleitor" value="">
 
                 <p:column headerText="Nome">
                     <h:outputText value="eleitor.nome"/>

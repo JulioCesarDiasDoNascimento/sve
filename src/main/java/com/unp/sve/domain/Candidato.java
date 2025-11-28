@@ -25,4 +25,7 @@ public class Candidato extends Pessoa{
 
     @Column(unique = true)
     private int numero;
+
+    // propostas do candidato (texto livre)
+    private String propostas;
 }

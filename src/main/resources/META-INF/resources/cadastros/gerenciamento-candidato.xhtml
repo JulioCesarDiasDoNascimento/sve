@@ -9,20 +9,20 @@
     <ui:define name="content">
         <h1>Gerenciar candidato</h1>
     <h:form id="tabelacandidato">
-        <p:commandButton value="Adicionar Candidato" id="adicionar-candidato" action="#{cadidadoController.criarNovo()}"/>
+        <p:commandButton value="Adicionar Candidato" id="adicionar-candidato" action="#{cadidadoController.criarNovo}" ajax="false"/>
 
-        <p:dataTable var="candidato" value="#{candidatoController.lista}">
+        <p:dataTable var="candidato" value="#{cadidadoController.lista}">
 
             <p:column headerText="Nome">
-                <h:outputText value="candidato.nome"/>
+                <h:outputText value="#{candidato.nome}"/>
             </p:column>
 
             <p:column headerText="Número">
-                <h:outputText value="candidato.numero"/>
+                <h:outputText value="#{candidato.numero}"/>
             </p:column>
 
             <p:column headerText="Partido">
-                <h:outputText value="candidato.partido"/>
+                <h:outputText value="#{candidato.partido}"/>
             </p:column>
 
         </p:dataTable>
