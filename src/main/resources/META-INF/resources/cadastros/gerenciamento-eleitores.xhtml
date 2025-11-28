@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/layout/layout.xhtml">
+
+    <ui:define name="content">
+        <h1>Gerenciar de eleitores</h1>
+        <h:form id="tabelaeleitor">
+            <p:commandButton value="Adicionar eleitor" id="adicionar-eleitor"/>
+            <br/>
+            <br/>
+
+            <h:outputLabel for="buscar" value="Buscar por eleitor ou CPF:" />
+            <p:inputText id="buscar"/>
+
+            <br/>
+            <br/>
+            <p:dataTable var="eleitor" value="#{eleitorController.lista}">
+
+                <p:column headerText="Nome">
+                    <h:outputText value="eleitor.nome"/>
+                </p:column>
+
+                <p:column headerText="CPF">
+                    <h:outputText value="eleitor.numero"/>
+                </p:column>
+
+                <p:column headerText="Status de Votação">
+                    <h:outputText value="eleitor.votalção"/>
+                </p:column>
+
+            </p:dataTable>
+
+        </h:form>
+    </ui:define>
+</ui:composition>

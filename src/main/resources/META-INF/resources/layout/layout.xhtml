@@ -8,20 +8,19 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>SVE</title>
-    <h:outputStylesheet name="libs/css/layout.css" />
+    <link rel="icon" type="image/png" href="#{resource['libs/img/vote.png']}"/>
+    <title>Sistema de Votação Eletrônica</title>
+    <h:outputStylesheet name="libs/css/layout.css"/>
 </h:head>
 <h:body>
     <div class="layoutdiv">
         <h:form id="topbar">
             <p:menubar styleClass="menu_topbar">
                 <p:menuitem value="Dashboard" outcome="/index.xhtml" icon="pi pi-home" />
-                <p:menuitem value="Eleitores" outcome="" icon="pi pi-user-edit"/>
-                <p:menuitem value="Candidatos" outcome="" icon="pi pi-users"/>
+                <p:menuitem value="Eleitores" outcome="/cadastros/gerenciamento-eleitores.xhtml" icon="pi pi-user-edit"/>
+                <p:menuitem value="Candidatos" outcome="/cadastros/gerenciamento-candidato.xhtml" icon="pi pi-users"/>
                 <p:menuitem value="Resultados" outcome="" icon="pi pi-plus-circle"/>
-                <p:menuitem value="Votações" outcome="" icon="pi pi-chart-bar"/>
-                <p:menuitem value="Configurações" outcome="" icon="pi pi-cog"/>
-                <p:menuitem value="Perfil" outcome="" icon="pi pi-user"/>
+                <p:menuitem value="Votações" outcome="/cadastros/votacao.xhtml" icon="pi pi-chart-bar"/>
             </p:menubar>
         </h:form>
         <p:growl id="messages"/>
