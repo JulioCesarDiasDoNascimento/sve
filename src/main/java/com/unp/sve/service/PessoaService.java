@@ -4,6 +4,7 @@ import com.unp.sve.domain.Pessoa;
 import com.unp.sve.repository.PessoaRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -30,7 +31,16 @@ public class PessoaService {
         if (pessoaRepository.existsByCpf(pessoa.getCpf())) {
             throw new IllegalArgumentException("CPF já cadastrado");
         }
-        return pessoaRepository.save(pessoa);
+        try {
+            return pessoaRepository.save(pessoa);
+        } catch (DataIntegrityViolationException e) {
+            var existente = pessoaRepository.findByCpf(pessoa.getCpf());
+            if (existente.isPresent()) {
+                pessoa.setId(existente.get().getId());
+                return pessoaRepository.save(pessoa);
+            }
+            throw e;
+        }
     }
 
     public Optional<Pessoa> validarLogin(String cpf, String senha) {

@@ -54,9 +54,7 @@ public class CadidadoController implements Serializable {
             if (candidado.getCpf() != null && !candidado.getCpf().isBlank()) {
                 pessoaService.buscarPorCpf(candidado.getCpf()).ifPresent(p -> candidado.setId(p.getId()));
             }
-            pessoaService.atualizar(candidado);
-            FacesContext.getCurrentInstance().addMessage(null,
-                    new FacesMessage(FacesMessage.SEVERITY_INFO, "Candidato cadastrado/atualizado com sucesso", null));
+            pessoaService.salvar(candidado);
             return "/cadastros/gerenciamento-candidato.xhtml?faces-redirect=true";
         } catch (Exception e) {
             FacesContext.getCurrentInstance().addMessage(null,

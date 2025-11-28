@@ -3,7 +3,7 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:p="http://primefaces.org/ui"
                 xmlns:h="http://xmlns.jcp.org/jsf/html"
-                template="/layout/layout.xhtml">
+template="/layout/layout.xhtml">
 
     <ui:define name="content">
        <h:form id="formLogin">
@@ -17,8 +17,10 @@
                      <p:password id="password" value="#{userController.pessoa.senha}" required="true" />
                 </p:panelGrid>
                 <p:commandButton value="Entrar" action="#{userController.login()}" update=":messages" ajax="true"/>
+                <br/>
+                <br/>
+                <p:button value="Usuário não cadastrado? Criar Conta" outcome="/cadastros/novo_usuario.xhtml"/>
            </p:card>
        </h:form>
     </ui:define>
 </ui:composition>
-

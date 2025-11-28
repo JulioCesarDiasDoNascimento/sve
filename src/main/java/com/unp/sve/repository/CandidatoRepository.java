@@ -1,12 +1,9 @@
 package com.unp.sve.repository;
 
 import com.unp.sve.domain.Candidato;
-import com.unp.sve.domain.Eleitor;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Repository;
 
-@Service
+@Repository
 public interface CandidatoRepository extends JpaRepository<Candidato, Long> {
-
-    Candidato findByNumero(int numero);
 }
