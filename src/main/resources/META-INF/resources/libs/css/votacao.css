@@ -1,0 +1,202 @@
+/* ===== CONTAINER PRINCIPAL ===== */
+.votacao-container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+}
+
+/* ===== TÍTULO ===== */
+.titulo-geral {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.titulo-geral h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.titulo-geral p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ===== LAYOUT PRINCIPAL ===== */
+.conteudo {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* ===== CARD DO CANDIDATO ===== */
+.card-candidato {
+    width: 380px;
+}
+
+.painel-candidato {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.foto-candidato {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.dados-candidato h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.dados-candidato span {
+    font-size: 14px;
+    color: #666;
+}
+
+/* ===== PAINEL NUMÉRICO ===== */
+.painel-numerico {
+    width: 380px;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* === Campo do número === */
+.campo-numero {
+    margin-bottom: 20px;
+}
+
+.campo-numero label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.campo-numero-input {
+    width: 100% !important;
+    padding: 10px !important;
+    font-size: 22px !important;
+    text-align: center !important;
+    font-weight: bold;
+}
+
+/* ===== TECLADO NUMÉRICO ===== */
+.teclado {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.tecla {
+    padding: 18px !important;
+    font-size: 20px !important;
+    border-radius: 8px !important;
+    background: #E7E9EE !important;
+    color: #333 !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+
+.tecla:hover {
+    background: #d9dbe0 !important;
+}
+
+/* ===== BOTÕES DE AÇÃO ===== */
+.botoes-acao {
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+}
+
+.btn-branco,
+.btn-corrige,
+.btn-confirma {
+    width: 32%;
+    padding: 12px !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    border: none !important;
+    color: white !important;
+}
+
+/* Branco */
+.btn-branco {
+    background: #F5F5F5 !important;
+    color: #333 !important;
+}
+
+.btn-branco:hover {
+    background: #e8e8e8 !important;
+}
+
+/* Corrige */
+.btn-corrige {
+    background: #FF7B32 !important;
+}
+
+.btn-corrige:hover {
+    background: #e86e2e !important;
+}
+
+/* Confirma */
+.btn-confirma {
+    background: #23A63C !important;
+}
+
+.btn-confirma:hover {
+    background: #1b8e31 !important;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 950px) {
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+}
+/* ===== AJUSTE PARA O BOTÃO ZERO ===== */
+
+/* Linha exclusiva para o 0 */
+.teclado-zero-linha {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    margin-top: 9px;
+}
+
+/* Espaços invisíveis laterais */
+.teclado-vazio {
+    visibility: hidden;
+}
+
+/* Botão 0 igual aos outros, mas com destaque */
+.tecla-zero {
+    padding: 18px !important;
+    font-size: 20px !important;
+    border-radius: 8px !important;
+    background: #e8e8e8 !important;
+    color: #333 !important;
+    border: none !important;
+    font-weight: 600 !important;
+}
+.teclado-zero-linha {
+    margin-bottom: 20px !important;
+}
+
